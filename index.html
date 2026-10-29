@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101a18">
+  <title>Snake — The classic game</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">✳</span> PLAYGROUND <span class="brand-divider">/</span> 01</div>
+      <span class="header-label">A LITTLE GAME FOR A LITTLE BREAK</span>
+    </header>
+
+    <section class="game-layout" aria-labelledby="game-title">
+      <div class="intro">
+        <div class="eyebrow"><span class="status-dot"></span> THE CLASSIC, REIMAGINED</div>
+        <h1 id="game-title">SNAKE<span>.</span></h1>
+        <p class="description">A little nostalgia, one bite at a time. Grab a snack, find your rhythm, and see how long you can grow.</p>
+        <div class="stats" aria-label="Game scores">
+          <div class="stat"><span>SCORE</span><strong id="score">00</strong></div>
+          <div class="stat"><span>BEST</span><strong id="best">00</strong></div>
+        </div>
+        <div class="instructions"><span class="instruction-icon" aria-hidden="true">↗</span><p><strong>HOW TO PLAY</strong><br>Use your arrow keys or WASD to move. Eat the fruit, but don’t run into yourself or the walls.</p></div>
+        <div class="keyboard-hint"><kbd>↑</kbd><div><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd></div><span>or <b>W A S D</b><br><small>SPACE TO PAUSE</small></span></div>
+      </div>
+
+      <div class="game-panel">
+        <div class="panel-top"><span><span class="status-dot"></span> READY TO PLAY</span><span>✳ &nbsp; SNAKE CLUB</span></div>
+        <div class="board-wrap" id="board-wrap">
+          <canvas id="game" width="600" height="600" aria-label="Snake game board. Use arrow keys or WASD to steer."></canvas>
+          <div class="overlay" id="overlay">
+            <div class="overlay-icon" aria-hidden="true">✳</div>
+            <h2 id="overlay-title">Ready when you are.</h2>
+            <p id="overlay-text">A good game starts with a single bite.</p>
+            <button class="primary-button" id="start-button" type="button">LET’S PLAY <span>↗</span></button>
+          </div>
+        </div>
+        <div class="panel-bottom"><span>GOOD LUCK &amp; HAVE FUN <span aria-hidden="true">✳</span></span><div class="panel-actions"><button id="pause-button" type="button" disabled>PAUSE <span>Ⅱ</span></button><button id="restart-button" type="button">RESTART <span>↻</span></button></div></div>
+        <div class="touch-controls" aria-label="Touch direction controls">
+          <button type="button" data-direction="up" aria-label="Move up">↑</button>
+          <div><button type="button" data-direction="left" aria-label="Move left">←</button><button type="button" data-direction="down" aria-label="Move down">↓</button><button type="button" data-direction="right" aria-label="Move right">→</button></div>
+        </div>
+      </div>
+    </section>
+    <footer><span>MADE FOR THE JOY OF PLAYING</span><span>TAKE IT ONE BITE AT A TIME <span aria-hidden="true">✳</span></span></footer>
+  </main>
+</body>
+</html>

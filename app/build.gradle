@@ -1,0 +1,32 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.example.snake'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.example.snake'
+        minSdk 23
+        targetSdk 35
+        versionCode 1
+        versionName '1.0'
+    }
+
+    sourceSets {
+        main.assets.srcDir layout.buildDirectory.dir('generated/webAssets')
+    }
+}
+
+// Package the browser game directly, so the Android app never has a stale copy.
+tasks.register('copyWebAssets', Sync) {
+    from(rootProject.projectDir) {
+        include 'index.html', 'style.css', 'script.js'
+    }
+    into layout.buildDirectory.dir('generated/webAssets')
+}
+
+tasks.named('preBuild').configure {
+    dependsOn tasks.named('copyWebAssets')
+}
